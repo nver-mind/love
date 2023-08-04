@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background: linear-gradient(45deg, #ff4081, #e91e63, #9c27b0, #673ab7);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1 {
+      color: #ffffff;
+      margin-top: 50px;
+    }
+    
+    .hearts {
+      margin-top: 30px;
+      font-size: 50px;
+    }
+    
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .btn-container button {
+      margin: 0 10px;
+    }
+    
+    .yes-btn,
+    .no-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-image: linear-gradient(to right, #f48fb1, #e91e63);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      color: white;
+      transition: transform 0.3s ease;
+    }
+    
+    .yes-btn:hover,
+    .no-btn:hover {
+      transform: scale(1.1);
+    }
+    
+    .no-btn {
+      background-image: linear-gradient(to right, #f44336, #ff5722);
+    }
+    
+    .no-btn:hover {
+      animation: shake 0.5s;
+    }
+    
+    @keyframes shake {
+      0% { transform: translate(0, 0); }
+      10% { transform: translate(-5px, 0); }
+      20% { transform: translate(5px, 0); }
+      30% { transform: translate(-5px, 0); }
+      40% { transform: translate(5px, 0); }
+      50% { transform: translate(-5px, 0); }
+      60% { transform: translate(5px, 0); }
+      70% { transform: translate(-5px, 0); }
+      80% { transform: translate(5px, 0); }
+      90% { transform: translate(-5px, 0); }
+      100% { transform: translate(0, 0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Do you love me, di?</h1>
+  <img src="https://media.tenor.com/zGm5acSjHCIAAAAM/cat-begging.gif">
+  <div class="btn-container">
+    <button class="yes-btn" onclick="redirectToAnotherPage()">Yes</button>
+    <button class="no-btn" onclick="moveRandomly()">No</button>
+  </div>
+  
+  <script>
+    function showMessage(message) {
+      alert(message);
+    }
+    
+    function moveRandomly() {
+      var button = document.querySelector('.no-btn');
+      var x = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+      var y = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+      button.style.position = 'absolute';
+      button.style.left = x + 'px';
+      button.style.top = y + 'px';
+    }
+        function redirectToAnotherPage() {
+            window.location.href = 'love.html';
+        }
+  </script>
+
+</body>
+</html>
